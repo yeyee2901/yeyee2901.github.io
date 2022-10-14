@@ -1,0 +1,46 @@
+{
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "plugins": ["astro"],
+      "extends": ["plugin:astro/recommended"],
+      "env": {
+        "node": true,
+        "astro/astro": true,
+        "es2020": true
+      },
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"],
+        "sourceType": "module"
+      },
+      "rules": {
+        "astro/no-conflict-set-directives": "error",
+        "astro/no-unused-define-vars-in-style": "error",
+        "astro/no-set-html-directive": "error"
+      }
+    },
+    {
+      "files": [
+        "**/*.astro/*.js",
+        "*.astro/*.js",
+        ".astro/*.ts",
+        "**/*.astro/*.ts"
+      ],
+      "env": {
+        "node": true,
+        "browser": true,
+        "ecmaVersion": 2015
+      },
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "rules": {
+        "no-unused-vars": "error",
+        "prettier/prettier": "off"
+      }
+    }
+  ]
+}
